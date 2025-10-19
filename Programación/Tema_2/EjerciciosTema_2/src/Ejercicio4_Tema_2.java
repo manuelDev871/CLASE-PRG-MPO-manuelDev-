@@ -12,11 +12,8 @@ public class Ejercicio4_Tema_2 {
         System.out.println("Introduce un valor");
         int valor = entradaTeclado.nextInt();
 
-        if (valor % 2 == 0) {
-            System.out.println("El numero introducido es par");
-        } else {
-            System.out.println("El numero introducido es impar");
-        }
+        boolean numero = (valor % 2 == 0);
+        System.out.println("¿Es el valor introducido, numero par? " + numero);
 
         entradaTeclado.close();
     }
