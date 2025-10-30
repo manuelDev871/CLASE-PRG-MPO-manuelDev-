@@ -106,5 +106,21 @@ public class Operadores {
         lectorTeclado.close();
     }
 
+    public void cambiosTipo(){
+        // int letraASCII = 115;
+        // char letra = 'w';
+        // System.out.println((int)letra);
+        // String palabra = "7"; //
+        // System.out.println(Integer.parseInt(palabra)+10);
+        // String palabra = "1";
+        // System.out.println(Boolean.parseBoolean(palabra));
+
+        // int numero = 123;
+        // System.out.println(String.valueOf(123)+1);
+        // boolean cierto = true;
+        // System.out.println(String.valueOf(cierto)+"asd");
+        char letra = 'a';
+        System.out.println(String.valueOf(letra)+123);
+    }
 
 }

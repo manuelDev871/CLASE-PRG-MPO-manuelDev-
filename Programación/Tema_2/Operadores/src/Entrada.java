@@ -5,6 +5,7 @@ public class Entrada {
         operadoresVariable.operadoresAritmeticos();
         operadoresVariable.operadoresComparacion();
         operadoresVariable.operadoresLogicos();
-        // operadoresVariable.evaluarCandidato();
+        operadoresVariable.evaluarCandidato();
+        operadoresVariable.cambiosTipo();
     }
 }
