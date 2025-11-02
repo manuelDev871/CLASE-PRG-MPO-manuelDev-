@@ -52,19 +52,19 @@ public class Ejercicio13_Tema_3 {
             System.out.println("Error. Introduce de nuevo tu edad.");
         } else if (edad < 12) {
             System.out.println("Eres menor de 12 años, entrada gratuita.");
-        } else if (edad >= 12 && edad <= 17) {
+        } else if (edad <= 17) {
             if (diaSemana == 2) { // Martes
                 System.out.println("Tienes " + edad + " años y hoy es martes, entrada gratuita.");
             } else {
                 System.out.println("Tienes " + edad + " años, precio de la entrada: 5 €.");
             }
-        } else if (edad >= 18 && edad <= 64) {
+        } else if (edad <= 64) {
             if (diaSemana == 4) { // Jueves
                 System.out.println("Tienes " + edad + " años y hoy es jueves, precio reducido: 7 €.");
             } else {
                 System.out.println("Tienes " + edad + " años, precio de la entrada: 10 €.");
             }
-        } else if (edad >= 65) {
+        } else {
             System.out.println("Tienes " + edad + " años, precio de la entrada: 6 €.");
         }
 

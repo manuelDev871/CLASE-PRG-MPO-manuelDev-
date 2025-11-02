@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Ejercicio12_Tema_3 {
 
+
     public static void main(String[] args) {
         Scanner entradaTeclado = new Scanner(System.in);
         System.out.println("Introduce tu contraseña");
@@ -17,7 +18,7 @@ public class Ejercicio12_Tema_3 {
 
         if (pass.length() < 8) {
             System.out.println("Contraseña no valida, debe tener al menos 8 caracteres de longitud.");
-        } else if (pass.equals("12345678") || pass.equalsIgnoreCase("password")) {
+        } else if (pass.equals("12345678") || pass.equals("password")) {
             System.out.println("Contraseña no valida, no puede ser ni (12345678), ni (password).");
         } else if (!contieneNumero(pass)) {
             System.out.println("Contraseña no valida, debe contener al menos un número.");
