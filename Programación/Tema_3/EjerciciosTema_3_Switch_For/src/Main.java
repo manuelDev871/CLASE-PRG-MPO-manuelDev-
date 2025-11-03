@@ -8,5 +8,10 @@ public class Main {
         // ejerciciosTemaTres.ejercicioTres();
         // ejerciciosTemaTres.ejercicioCuatro();
         // ejerciciosTemaTres.ejercicioCinco();
+        // ejerciciosTemaTres.ejercicioSeis();
+        // ejerciciosTemaTres.ejercicioSiete();
+        // ejerciciosTemaTres.ejercicioOcho();
+        // ejerciciosTemaTres.ejercicioNueve();
+        // ejerciciosTemaTres.ejercicioDiez();
     }
 }

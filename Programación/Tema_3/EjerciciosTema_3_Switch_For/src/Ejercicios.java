@@ -225,4 +225,156 @@ public class Ejercicios {
         }
         entradaTeclado.close();
     }
+
+
+    // Escribe un programa que pida un número y use un bucle for para mostrar su tabla de multiplicar del 1 al 10.
+
+    public void ejercicioSeis(){
+        Scanner entradaTeclado = new Scanner(System.in);
+        System.out.println("Introduce un numero: ");
+        int tabla = entradaTeclado.nextInt();
+
+        for (int i = 1; i < 11; i++) {
+            System.out.printf("%d * %d = %d\n",tabla, i, tabla * i);
+        }
+
+        entradaTeclado.close();
+    }
+
+
+    /*  Crea un programa que pida un número N y use un bucle for para calcular la suma
+        de todos los números desde 1 hasta N. Muestra el resultado final.
+    */
+
+    public void ejercicioSiete() {
+        Scanner entradaTeclado = new Scanner(System.in);
+        System.out.println("Introduce un numero");
+        int numeroN = entradaTeclado.nextInt();
+
+        int suma = 0;
+        System.out.print("Sumando: ");
+
+        for (int i = 1; i <= numeroN; i++) {
+            suma += i;
+            System.out.print(i);
+            if (i < numeroN) {
+                System.out.print("+");
+            }
+
+        }
+        System.out.println();
+        System.out.printf("La suma de numeros del 1 al " + numeroN + " es: " + suma);
+    }
+
+
+    /*  Desarrolla un programa que pida un número N y use un bucle for para contar
+        cuántos números pares e impares hay desde 1 hasta N. Muestra ambos contadores.
+    */
+
+    public void ejercicioOcho () {
+        Scanner entradaTeclado = new Scanner(System.in);
+
+        System.out.println("Introduce un numero");
+        int numeroN = entradaTeclado.nextInt();
+
+        int pares = 0;
+        int impares = 0;
+
+        for (int i = 1; i <= numeroN; i++) {
+            if (i %2 == 0) {
+                pares++;
+            } else {
+                impares++;
+            }
+        }
+        System.out.println("Recorreindo numeros del 1 al " + numeroN + "...");
+        System.out.println("Contador de numeros pares = " + pares);
+        System.out.println("Contador de numeros impares = " + impares);
+
+        entradaTeclado.close();
+    }
+
+
+    /*  Escribe un programa que pida un número entero positivo y calcule su factorial
+        usando un bucle for. El factorial de N es: N! = N × (N-1) × (N-2) × ... × 1
+     */
+
+    public void ejercicioNueve () {
+        Scanner entradaTeclado = new Scanner(System.in);
+        System.out.println("Introduce un numero positivo");
+        int numeroN = entradaTeclado.nextInt();
+        int factorial = 0;
+
+        System.out.println("Calculando " + numeroN + "!");
+        for (int i = numeroN; i >= 1 ; i--) {
+            System.out.print(i);
+            if (i > 1) {
+                System.out.print(" x ");
+            }
+
+            factorial += i;
+        }
+        System.out.println();
+        System.out.println("El factorial de " + numeroN + " es: " + factorial);
+
+        entradaTeclado.close();
+    }
+
+
+    /*  Crea un programa que muestre un menú con 3 tipos de ejercicios: 1=Flexiones, 2=Abdominales, 3=Sentadillas.
+        Pide al usuario que elija un ejercicio y cuántas repeticiones quiere hacer.
+        Usa un switch para determinar el ejercicio y un for para contar las repeticiones una a una.
+     */
+
+    public void ejercicioDiez() {
+        // 1 -> Solicitar datos:
+
+        Scanner entradaTeclado = new Scanner(System.in);
+        System.out.printf("---------EJERCICIOS---------\n" +
+                "1. Flexiones\n" +
+                "2. Abdominales\n" +
+                "3. Sentadillas \n");
+
+        System.out.println("Elige un ejercicio (1-3)");
+        int eleccion = entradaTeclado.nextInt();
+
+        System.out.println("¿Cuantas repeticiones quieres hacer?");
+        int repeticiones = entradaTeclado.nextInt();
+
+        switch (eleccion) {
+            case 1:
+                System.out.println("Has elegido: Flexiones");
+
+                for (int i = 1; i <= repeticiones ; i++) {
+                    System.out.println("Repeticion " + i + " completada");
+                }
+
+                break;
+
+            case 2:
+                System.out.println("Has elegido: Abdominales");
+
+                for (int i = 1; i <= repeticiones ; i++) {
+                    System.out.println("Repeticion " + i + " completada");
+                }
+
+                break;
+
+            case 3:
+                System.out.println("Has elegido: Sentadillas");
+
+                for (int i = 1; i <= repeticiones ; i++) {
+                    System.out.println("Repeticion " + i + " completada");
+                }
+
+                break;
+
+            default:
+                System.out.println("Opción no encontrada");
+
+        }
+        System.out.println();
+        System.out.println("¡Ejercicio completado! Ha hecho " + repeticiones + " repeticiones");
+        entradaTeclado.close();
+    }
 }
