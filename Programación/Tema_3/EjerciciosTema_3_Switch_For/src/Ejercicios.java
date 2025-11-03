@@ -197,27 +197,27 @@ public class Ejercicios {
 
         switch (mes) {
             case 1:
-                if (mes == 12 || mes == 1 || mes == 2) {
-                    System.out.println("El mes " + mes + " corresponde a: Invierno");
-                }
-                break;
-
             case 2:
-                if (mes == 3 || mes == 4 || mes == 5) {
-                    System.out.println("El mes " + mes + " corresponde a: Primavera");
-                }
+            case 12:
+                    System.out.println("El mes " + mes + " corresponde a: Invierno");
                 break;
 
             case 3:
-                if (mes == 6 || mes == 7 || mes == 8) {
-                    System.out.println("El mes " + mes + " corresponde a: Verano");
-                }
+            case 4:
+            case 5:
+                    System.out.println("El mes " + mes + " corresponde a: Primavera");
                 break;
 
-            case 5:
-                if (mes == 9 || mes == 10 || mes == 11) {
+            case 6:
+            case 7:
+            case 8:
+                    System.out.println("El mes " + mes + " corresponde a: Verano");
+                break;
+
+            case 9:
+            case 10:
+            case 11:
                     System.out.println("El mes " + mes + " corresponde a: Otoño");
-                }
                 break;
 
             default:

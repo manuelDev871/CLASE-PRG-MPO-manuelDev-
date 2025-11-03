@@ -1,17 +1,18 @@
 package controller;
 
+import model.Usuario;
+
 public class GestorUsuarios {
-    // LA LOGICA DE LA OPERACION.
-    public void validarUsuario (String nombre, int edad, String correo) {
-
+    // la logica de la aplicacion
+    public void validarUsuario(String nombre, int edad, String correo){
+        Usuario usuario = new Usuario();
     }
 
-    public void obtenerInformacion (String nombre, String correo) {
+    public void obtenerInformacion(String nombre, String correo){
         // voy a buscar un documento
-        GestorDocumentos gestorDocumentos = new GestorDocumentos();
     }
 
-    public void calcularNomina (String nombre, String puesto) {
+    public void calcularNomina(String nombre, String puesto){
 
     }
 }
