@@ -3,9 +3,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        /*  Ejemplo de ejercicio: Pide por teclado 10 numeros y di de todos ellos
+
+        /*  TEORIA
+
+            Ejemplo de ejercicio: Pide por teclado 10 numeros y di de todos ellos
             cuantos son pares, impares, numero medio introducido y calcular cual es
-            el mas mas grande y mas pequeño */
+            el mas mas grande y mas pequeño
 
         // inicil ; final ; incremento
 
@@ -63,5 +66,58 @@ public class Main {
         for (int i=0; i<11; i++){
             System.out.printf("%d * %d = %d \n", 5, i, 5 * i);
         }
+         */
+
+        /*
+        // For tradicional: inicio; final; incremento
+
+        String[] diasSemana = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
+
+        for (int i = 0; i < 7; i++) {
+            if (i%2 == 0) {
+                System.out.println(diasSemana[i]);
+            }
+        }
+
+        // Con este ejercico estamos decladando un Array y diciendo que quieres imprimir los dias de la semana en posicion Par.
+        */
+
+
+        // For Each: ->(tipo de variable + nombre que yo quiera; ej; item) : coleccion a recorrer
+        // Recorre todos los elementos.
+
+        String[] diasSemana = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
+
+        for (String item : diasSemana) {
+            System.out.println(item);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // EJERCICIOS CON FOR (METODO)
+
+        EjerciciosForClase ejercicios = new EjerciciosForClase();
+
+        // ejercicios.ejercicioUno();
+        // ejercicios.ejercicioDos();
+        // ejercicios.ejercicioTres();
+        //ejercicios.ejercicioCuatro();
+        // ejercicios.ejercicioCinco();
+        // ejercicios.ejercicioSeis();
+        // ejercicios.ejercicioSiete();
+
     }
 }

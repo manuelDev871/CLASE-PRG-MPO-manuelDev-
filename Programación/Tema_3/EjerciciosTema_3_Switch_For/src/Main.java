@@ -13,5 +13,6 @@ public class Main {
         // ejerciciosTemaTres.ejercicioOcho();
         // ejerciciosTemaTres.ejercicioNueve();
         // ejerciciosTemaTres.ejercicioDiez();
+        ejerciciosTemaTres.ejercicioPrueba();
     }
 }

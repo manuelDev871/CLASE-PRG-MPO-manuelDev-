@@ -377,4 +377,5 @@ public class Ejercicios {
         System.out.println("¡Ejercicio completado! Ha hecho " + repeticiones + " repeticiones");
         entradaTeclado.close();
     }
+
 }
