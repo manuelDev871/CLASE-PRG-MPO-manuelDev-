@@ -5,5 +5,12 @@ public class Main {
         // ejercicioArray.ejercicioUno();
         // ejercicioArray.ejercicioDos();
         // ejercicioArray.ejercicioTres();
+        // ejercicioArray.ejercicioCuatro();
+        // ejercicioArray.ejercicioCinco();
+        // ejercicioArray.ejercicioSeis();
+        // ejercicioArray.ejercicioSiete();
+        // ejercicioArray.ejercicioOcho();
+        // ejercicioArray.ejercicioNueve();
+        // ejercicioArray.ejercicioDiez();
     }
 }
