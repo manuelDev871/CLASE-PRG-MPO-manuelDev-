@@ -21,9 +21,23 @@ public class Main {
 
         //  ejercicios.generarFibonacci();
 
-        int[] edades = new int[] {23,22,19,65,34,105,145,-10,89,212,99};
-        ejercicios.contarEdadesValidas(edades);
-        ejercicios.mostrarEdadesValidas(edades);
+        //  int[] edades = new int[] {23,22,19,65,34,105,145,-10,89,212,99};
+        //  ejercicios.contarEdadesValidas(edades);
+        //  ejercicios.mostrarEdadesValidas(edades);
 
+        //  ejercicios.contarVocales("Hola que tal");
+
+        //  String[] palabrasProhibidas = new String[] {"hola", "palabra"};
+        //  ejercicios.contienePalabraProhibida("hola , el texto que estoy escribiendo si contiene  prohibida", palabrasProhibidas);
+
+        //  ejercicios.primeraPalabraLarga("Hola, esto es una prueba", 4);
+
+        //  ejercicios.verificarStock(5,8);
+        //  ejercicios.calcularDescuento(1.0,6);
+
+        //  String[] productos = new String[] {"coche","movil"};
+        //  int[] cantidades = new int[] {2,2};
+        //  double[] precios = new double[] {5.0,10.0};
+        //  ejercicios.procesarPedidos(productos,cantidades,precios);
     }
 }

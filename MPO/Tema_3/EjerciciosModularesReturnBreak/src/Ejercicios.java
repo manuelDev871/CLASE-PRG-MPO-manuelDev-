@@ -5,8 +5,6 @@ public class Ejercicios {
     public boolean validarContrasenha (String password) {
 
         /*
-        EJERCICIO 1:
-
             Objetivo: Crear un metodo que valide una contraseña y use return
             para salir anticipadamente si no cumple los requisitos.
 
@@ -246,9 +244,6 @@ public class Ejercicios {
         System.out.println();
     }
 
-
-
-
     public int contarEdadesValidas (int[] edades) {
 
         /*
@@ -279,7 +274,6 @@ public class Ejercicios {
         return contadorEdadesValidas;
 
     }
-
     public void mostrarEdadesValidas(int[] edades) {
 
         System.out.println("Edades validas: ");
@@ -291,8 +285,133 @@ public class Ejercicios {
         }
     }
 
+    public int contarVocales(String texto) {
+
+        /*
+             Objetivo: Crear varios métodos modulares que analicen un texto y usen `return`, `break` y `continue`.
+
+             1. Crea un metodo int contarVocales(String texto) que cuente vocales, usando continue para consonantes.
+             2. Crea un metodo boolean contienePalabraProhibida(String texto, String[] palabrasProhibidas)
+                que use return true en cuanto encuentre una palabra prohibida.
+             3. Crea un metodo String primeraPalabraLarga(String texto, int longitudMinima) que busque y devuelva
+                la primera palabra que supere la longitud mínima usando return.
+             4. En el main, prueba todos los métodos con diferentes textos.
+        */
+
+        int contadorVocales = 0;
+        texto = texto.toLowerCase();
+
+        for (int i = 0; i < texto.length(); i++) {
+            char c = texto.charAt(i);
+
+            // Si NO es vocal → saltamos la iteración
+            if (c != 'a' && c != 'e' && c != 'i' && c != 'o' && c != 'u') {
+                continue;   // pasa al siguiente caracter
+            }
+
+            // Si llegamos aquí, entonces sí es vocal
+            contadorVocales++;
+        }
+
+        System.out.println("Hay " + contadorVocales + " vocales");
+        return contadorVocales;
+    }
+    public boolean contienePalabraProhibida(String texto, String[] palabrasProhibidas) {
+
+        for (int i = 0; i < palabrasProhibidas.length; i++) {
+            if (texto.contains(palabrasProhibidas[i])) {
+                System.out.println("El texto contiene una palabra prohibida: " + palabrasProhibidas[i]);
+                return true;   // terminamos en cuanto encontremos una
+            }
+        }
+
+        System.out.println("El texto no contiene ninguna palabra prohibida");
+        return false;  // si llegamos aquí, no encontramos ninguna
+    }
+    public String primeraPalabraLarga(String texto, int longitudMinima) {
+
+        String[] palabra = texto.split(" ");
+
+        for (int i = 0; i < palabra.length; i++) {
+            if (palabra[i].length() > longitudMinima) {
+                System.out.println(palabra[i]);
+                return palabra[i];
+            }
+        }
+        return null;
+    }
 
 
+    public boolean verificarStock(int cantidad, int stock) {
 
+        /*
+            Crear un sistema modular de procesamiento de pedidos que use return, break y continue.
 
+            1.  Crea un metodo boolean verificarStock(int cantidad, int stock) que devuelva inmediatamente false si no hay suficiente stock.
+            2.  Crea un metodo double calcularDescuento(double precio, int cantidad) que aplique descuentos por cantidad.
+            3.  Crea un metodo void procesarPedidos(String[] productos, int[] cantidades, double[] precios).
+            4.  En el procesamiento, usa continue para saltar productos con cantidad 0.
+            5.  Usa break si el total del pedido supera los 1000 euros (límite de procesamiento automático).
+            6.  En el main, simula el procesamiento de varios pedidos.
+        */
+
+        if (stock > cantidad) {
+            System.out.println("Enhorabuena, hay stock suficiente");
+        }
+
+        return false;
+    }
+    public double calcularDescuento(double precio, int cantidad) {
+
+        double precioTotal = 0;
+
+        if (cantidad <= 0) {
+            precio = 0;
+            return precio;
+        }
+        else if (cantidad == 1) {
+            System.out.println("Precio original: " + precio + " €");
+            return precio;
+        } else if (cantidad <= 5) {
+            precioTotal = cantidad * precio;
+            precioTotal *= 0.5;
+            System.out.println("Descuento del 50%");
+            System.out.printf("Precio total: %.2f €", precioTotal);
+            return precioTotal;
+        } else {
+            precioTotal = precio * cantidad;
+            precioTotal *= 0.65;
+            System.out.println("Descuento del 65%");
+            System.out.printf("Precio total: %.2f €", precioTotal);
+            return precioTotal;
+        }
+    }
+    public void procesarPedidos(String[] productos, int[] cantidades, double[] precios) {
+
+        double totalPedido = 0;
+
+        for (int i = 0; i < productos.length; i++) {
+
+            // Saltar productos sin cantidad usando continue
+            if (cantidades[i] == 0) {
+                continue;
+            }
+
+            double subtotal = cantidades[i] * precios[i];
+            totalPedido += subtotal;
+
+            System.out.println("Producto: " + productos[i] +
+                    " | Cantidad: " + cantidades[i] +
+                    " | Precio ud.: " + precios[i] +
+                    " | Subtotal: " + subtotal);
+
+            // Si el total supera el límite → parar el procesamiento
+            if (totalPedido > 1000) {
+                System.out.println("❗ Límite de 1000€ superado. Procesamiento detenido.");
+                break;
+            }
+        }
+
+        System.out.println("Total procesado hasta el momento: " + totalPedido + " €");
+    }
 }
