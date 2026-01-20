@@ -2,40 +2,36 @@ package model;
 
 public class Coche {
 
-    private String nombre;
-    private int dorsal;
-    private int km;
+    private String marca;
+    private String modelo;
+    private int kmRecorridos;
     private int puntos;
 
-    public Coche(String nombre, int dorsal) {
-        this.nombre = nombre;
-        this.dorsal = dorsal;
-        this.km = 0;
+    public Coche(String marca, String modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.kmRecorridos = 0;
         this.puntos = 0;
     }
 
-    public void resetKm() {
-        km = 0;
-    }
-
-    public void avanzar(int km) {
-        this.km += km;
-    }
-
     public String getNombre() {
-        return nombre;
+        return marca + " " + modelo;
     }
 
-    public int getDorsal() {
-        return dorsal;
-    }
-
-    public int getKm() {
-        return km;
+    public int getKmRecorridos() {
+        return kmRecorridos;
     }
 
     public int getPuntos() {
         return puntos;
+    }
+
+    public void sumarKm(int km) {
+        kmRecorridos += km;
+    }
+
+    public void resetKm() {
+        kmRecorridos = 0;
     }
 
     public void sumarPuntos(int puntos) {

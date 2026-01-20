@@ -1,22 +1,22 @@
 package model;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Carrera {
 
-    private int kmTotales;
-    private List<Coche> coches;
+    private ArrayList<Coche> coches;
+    private int kmCarrera;
 
-    public Carrera(int kmTotales, List<Coche> coches) {
-        this.kmTotales = kmTotales;
+    public Carrera(ArrayList<Coche> coches, int kmCarrera) {
         this.coches = coches;
+        this.kmCarrera = kmCarrera;
     }
 
-    public int getKmTotales() {
-        return kmTotales;
-    }
-
-    public List<Coche> getCoches() {
+    public ArrayList<Coche> getCoches() {
         return coches;
+    }
+
+    public int getKmCarrera() {
+        return kmCarrera;
     }
 }

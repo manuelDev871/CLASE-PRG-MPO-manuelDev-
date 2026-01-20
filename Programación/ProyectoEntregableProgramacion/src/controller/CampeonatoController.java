@@ -3,42 +3,49 @@ package controller;
 import model.Campeonato;
 import model.Carrera;
 import model.Coche;
-
-import java.util.*;
+import java.util.ArrayList;
 
 public class CampeonatoController {
 
-    private CarreraController carreraController = new CarreraController();
+    public void ejecutarCampeonato(Campeonato campeonato) {
+        CarreraController carreraController = new CarreraController();
+        int numCarrera = 1;
 
-    public void ejecutarCampeonato(Campeonato campeonato, int numCarreras, int kmCarrera) {
-
-        for (int i = 1; i <= numCarreras; i++) {
+        for (Carrera carrera : campeonato.getCarreras()) {
+            System.out.println("\n=== CARRERA " + numCarrera + " ===");
 
             for (Coche c : campeonato.getCoches()) {
                 c.resetKm();
             }
 
-            Carrera carrera = new Carrera(kmCarrera, campeonato.getCoches());
             carreraController.simularCarrera(carrera);
-            carreraController.mostrarPodio(carrera.getCoches(), i);
+            mostrarClasificacion(campeonato.getCoches());
+
+            numCarrera++;
         }
 
-        mostrarClasificacionFinal(campeonato.getCoches());
+        System.out.println("\n=== CLASIFICACIÓN FINAL ===");
+        ordenarPorPuntos(campeonato.getCoches());
+        mostrarClasificacion(campeonato.getCoches());
     }
 
-    private void mostrarClasificacionFinal(List<Coche> coches) {
+    private void ordenarPorPuntos(ArrayList<Coche> coches) {
+        for (int i = 0; i < coches.size() - 1; i++) {
+            for (int j = i + 1; j < coches.size(); j++) {
+                if (coches.get(j).getPuntos() > coches.get(i).getPuntos()) {
+                    Coche aux = coches.get(i);
+                    coches.set(i, coches.get(j));
+                    coches.set(j, aux);
+                }
+            }
+        }
+    }
 
-        coches.sort(
-                Comparator.comparingInt(Coche::getPuntos).reversed()
-        );
-
-        System.out.println("=== CLASIFICACIÓN GENERAL ===");
-        System.out.println("Posición Vehículo Dorsal Puntos");
-
-        int pos = 1;
-        for (Coche c : coches) {
-            System.out.println(pos + "º " + c.getNombre() + " " + c.getDorsal() + " " + c.getPuntos());
-            pos++;
+    private void mostrarClasificacion(ArrayList<Coche> coches) {
+        System.out.println("Posición | Coche | Puntos");
+        for (int i = 0; i < coches.size(); i++) {
+            System.out.println((i + 1) + "º | " + coches.get(i).getNombre()
+                    + " | " + coches.get(i).getPuntos());
         }
     }
 }
