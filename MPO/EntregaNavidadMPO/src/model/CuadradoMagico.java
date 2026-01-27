@@ -10,9 +10,8 @@ public class CuadradoMagico {
     private int constanteMagica;
     private int intentos;
 
-    // Constructor
+    // Constructor:
     public CuadradoMagico(int n) {
-
         this.n = n;
         this.matriz = new int[n][n];
         this.constanteMagica = 0;
