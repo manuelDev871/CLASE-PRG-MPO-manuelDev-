@@ -1,9 +1,6 @@
-package Tema4.ClaseEjercicioAgenda.controller;
+package Tema5.ClaseEjercicioAgenda.controller;
 
 import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Scanner;
-import java.util.function.Predicate;
 
 public class Agenda {
 

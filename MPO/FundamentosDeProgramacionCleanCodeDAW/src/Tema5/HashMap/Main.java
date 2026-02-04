@@ -1,7 +1,7 @@
-package Tema4.HashMap;
+package Tema5.HashMap;
 
-import Tema4.HashMap.controller.Agenda;
-import Tema4.HashMap.model.Persona;
+import Tema5.HashMap.controller.Agenda;
+import Tema5.HashMap.model.Persona;
 
 public class Main {
 

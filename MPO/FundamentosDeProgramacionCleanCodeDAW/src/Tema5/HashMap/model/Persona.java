@@ -1,4 +1,4 @@
-package Tema4.HashMap.model;
+package Tema5.HashMap.model;
 
 public class Persona {
 

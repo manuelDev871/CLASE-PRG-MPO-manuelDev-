@@ -1,6 +1,6 @@
-package Tema4.ClaseEjercicioAgenda;
+package Tema5.ClaseEjercicioAgenda;
 
-import Tema4.ClaseEjercicioAgenda.controller.Agenda;
+import Tema5.ClaseEjercicioAgenda.controller.Agenda;
 
 import java.util.Scanner;
 
