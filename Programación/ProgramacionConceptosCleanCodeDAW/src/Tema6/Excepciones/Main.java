@@ -1,5 +1,7 @@
 package Tema6.Excepciones;
 
+import Tema6.Excepciones.utils.ResultadoException;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -9,7 +11,6 @@ public class Main {
         //int [] numeros = new int[] {1,2,3,4,5,6};
 
         // NullPointerException - ArrayIndexOutOfBooundsException - ArithException - InputMisMatchException
-
         Operaciones operaciones = new Operaciones();
         Scanner scanner = new Scanner(System.in);
         boolean fallo;
@@ -21,14 +22,14 @@ public class Main {
             int operandoUno = scanner.nextInt();
             System.out.print("Indica el operando dos: ");
             int operandoDos = scanner.nextInt();
-            operaciones.sumar(operandoUno,operandoDos); // -> Va con la etiqueta que puede provocar error Arithmetric
+            operaciones.operar(operandoUno,operandoDos); // -> Va con la etiqueta que puede provocar error Arithmetric
         } catch (InputMismatchException e) {
             System.out.println("Error en la introduccion de los datos");
         } catch (ArithmeticException e) {
             System.out.println("Division entre cero, le pongo solucion");
+        } catch (ResultadoException e) {
+
         }
-
-
 
 /*
         do {
