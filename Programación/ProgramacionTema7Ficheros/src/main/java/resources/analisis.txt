@@ -1,0 +1,1 @@
+Esto es un ejemplo de la lectura de fichero en modo texto
