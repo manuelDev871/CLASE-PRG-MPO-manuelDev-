@@ -1,4 +1,4 @@
-package EjerciciosTema4.EjercicioUnoClase.model;
+package EjerciciosTema4.EjerciciosDeClase.EjercicioUnoClase.model;
 
 public class Alumno {
 

@@ -1,10 +1,7 @@
-package EjerciciosTema4.EjercicioUnoClase;
+package EjerciciosTema4.EjerciciosDeClase.EjercicioUnoClase;
 
-import EjerciciosTema4.EjercicioUnoClase.controller.Gestor;
-import EjerciciosTema4.EjercicioUnoClase.model.Alumno;
-
-import java.util.ArrayList;
-import java.util.List;
+import EjerciciosTema4.EjerciciosDeClase.EjercicioUnoClase.controller.Gestor;
+import EjerciciosTema4.EjerciciosDeClase.EjercicioUnoClase.model.Alumno;
 
 public class Main {
 

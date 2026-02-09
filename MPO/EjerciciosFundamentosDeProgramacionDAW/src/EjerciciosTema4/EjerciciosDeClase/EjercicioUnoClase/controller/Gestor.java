@@ -1,6 +1,6 @@
-package EjerciciosTema4.EjercicioUnoClase.controller;
+package EjerciciosTema4.EjerciciosDeClase.EjercicioUnoClase.controller;
 
-import EjerciciosTema4.EjercicioUnoClase.model.Alumno;
+import EjerciciosTema4.EjerciciosDeClase.EjercicioUnoClase.model.Alumno;
 
 import java.util.*;
 import java.util.function.BiPredicate;
