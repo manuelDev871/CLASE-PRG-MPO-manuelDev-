@@ -2,13 +2,12 @@ package EjerciciosTema4.EjercicioUnoClase.controller;
 
 import EjerciciosTema4.EjercicioUnoClase.model.Alumno;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.OptionalDouble;
+import java.util.*;
+import java.util.function.BiPredicate;
 
 public class Gestor {
 
-    private ArrayList<Alumno> listaAlumnos;
+    private List<Alumno> listaAlumnos;
 
     private HashMap<String,Alumno> alumnosMap;
 
@@ -67,4 +66,38 @@ public class Gestor {
         OptionalDouble media = listaAlumnos.stream().mapToDouble(Alumno::getNota).average();
         System.out.println(media.getAsDouble());
     }
+
+    public long getNumeroAprobados() {
+        // recorro, pregunto >= 5 sumatorio
+        /*
+        int numeroAprobados = 0;
+        for (Alumno a : listaAlumnos) {
+            if (a.getNota() >= 5) {
+                numeroAprobados++;
+            }
+        }
+        */
+
+        return listaAlumnos.stream().filter(item -> item.getNota() >= 5).count();
+    }
+
+    public List<Alumno> getAprobados() {
+        return listaAlumnos.stream().filter(ietm -> ietm.getNota() >= 5).toList();
+    }
+
+    public Optional<Alumno> buscarDNI(String dni) {
+        // si el correo que estas buscando no esta -> null
+        return listaAlumnos.stream().filter(item -> item.getDni().equals(dni)).findFirst();
+    }
+
+    public void ordenarAlumnos() {
+        listaAlumnos = listaAlumnos.stream().sorted(Comparator.comparingInt(Alumno::getNota)).toList();
+        listaAlumnos.forEach(Alumno::mostrarDatos);
+    }
+
+    public List<Alumno> getAlumnosNota(BiPredicate<Alumno, Double> predicado, double nota) {
+        return listaAlumnos.stream().
+                filter(item -> predicado.test(item,nota)).toList();
+    }
 }
+
