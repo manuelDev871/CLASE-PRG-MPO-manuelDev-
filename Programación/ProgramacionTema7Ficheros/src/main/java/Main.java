@@ -3,7 +3,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        // File fichero = new File("src/main/java/resources/analisis-secundario.txt");
+        // File fichero = new File("src/main/java/resources/analisis_codigo.txt");
         // Logico o fisico?
         /*
         System.out.println("Informacion del fichero: ");
@@ -26,14 +26,14 @@ public class Main {
             }
         }
          */
-
+        /*
         File carpeta = new File("src/main/java/resources/carpeta1");
 
         if (carpeta.isDirectory()) {
            /* for (String item : carpeta.list()) {
                 System.out.println(item);
             }
-            */
+
 
             for(File item: carpeta.listFiles()) {
                 System.out.println(item.getName());
@@ -50,6 +50,15 @@ public class Main {
                     }
                 }
             }
-        }
+            */
+
+        Operaciones operaciones = new Operaciones();
+        // operaciones.leerFichero("src/main/java/resources");
+        // operaciones.leerContenidoFichero("src/main/java/resources/analisis.txt");
+        // operaciones.leerContenidoFicheroLineas("src/main/java/resources/analisis.txt");
+        // operaciones.descifrarContenido("src/main/java/resources/analisis_codigo.txt");
+        //operaciones.descifrarContenido("src/main/java/resources/escritura.txt");
+        operaciones.escrituraFichero("src/main/java/resources/escritura.txt");
+        //operaciones.descifrarContenido("src/main/java/resources/escritura.txt");
     }
 }
