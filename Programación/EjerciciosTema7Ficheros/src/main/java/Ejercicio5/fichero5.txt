@@ -1,0 +1,15 @@
+Hola, esto es una prueba
+Estoy contando
+cuantas lineas
+tiene mi fichero
+Para ello
+utlilizo
+BufferedReader
+para leer
+mi fichero
+y un bucle
+while para contar
+las lineas que hay que
+no son nulas
+utilizando una variable
+int contarLineas
