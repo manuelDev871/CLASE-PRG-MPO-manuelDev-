@@ -1,7 +1,13 @@
 package EjerciciosTema4.EjerciciosDeClase.EjercicioClaseT4Profesor.controller;
 
 import EjerciciosTema4.EjerciciosDeClase.EjercicioClaseT4Profesor.model.Producto;
+import org.json.JSONObject;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.*;
 import java.util.function.BiPredicate;
 
@@ -76,5 +82,40 @@ public class Gestor {
         return productos.stream()
                 .filter(item -> condicion.test(item, parametro))
                 .toList();
+    }
+
+    public DoubleSummaryStatistics getEstadisticas() {
+        return productos.stream().mapToDouble(Producto::getPrecio)
+                .summaryStatistics();
+    }
+
+    public void obtenerProductosAPI() {
+        HttpClient client = null;
+
+        try {
+            String urlProductos = "https://dummyjson.com/products";
+            // Abro el navegador
+            client = HttpClient.newHttpClient();
+            // Crea la peticion
+            HttpRequest request = HttpRequest.newBuilder().uri(URI.create(urlProductos)).GET().build();
+            // Lanza la peticion y espera una respuesta
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            String body = response.body();
+            JSONObject jsonObject = new JSONObject(body);
+            JSONObject producto1 = jsonObject.getJSONArray("products").getJSONObject(0);
+            System.out.println(producto1.getString("title"));
+            System.out.println(body);
+            System.out.println(response.statusCode());
+        } catch (IOException e) {
+            System.out.println("Error en de I/O");
+        } catch (InterruptedException e) {
+            System.out.println("Error en la conexion");
+        } finally {
+            try {
+                client.close();
+            } catch (Exception e) {
+                System.out.println("Error en el cerradp");
+            }
+        }
     }
 }
